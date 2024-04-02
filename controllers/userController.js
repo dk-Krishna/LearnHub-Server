@@ -350,7 +350,7 @@ export const updateUserRole = cathAsynError(async (req, res, next) => {
 
   return res.status(200).json({
     success: true,
-    message: `${user.name}'s role changed to ${newUser.role} successfully.`,
+    message: `${newUser.name}'s role changed to ${newUser.role} successfully.`,
   });
 });
 

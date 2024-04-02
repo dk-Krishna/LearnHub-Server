@@ -61,20 +61,20 @@ export const getDashboardStats = cathAsynError(async (req, res, next) => {
   }
 
   const userCount = statsData[11].users;
-  const subscribersCount = statsData[11].users;
-  const viewsCount = statsData[11].users;
+  const subscribersCount = statsData[11].subscribers;
+  const viewsCount = statsData[11].views;
 
-  let userPercentage = true,
-    subscribersPercentage = true,
-    viewsPercentage = true;
+  let userPercentage = 0,
+    subscribersPercentage = 0,
+    viewsPercentage = 0;
 
   let userProfit = true,
     subscribersProfit = true,
     viewsProfit = true;
 
   if (statsData[10].users === 0) userPercentage = userCount * 100;
-  if (statsData[10].users === 0) subscribersPercentage = subscribersCount * 100;
-  if (statsData[10].users === 0) viewsPercentage = viewsCount * 100;
+  if (statsData[10].subscribers === 0) subscribersPercentage = subscribersCount * 100;
+  if (statsData[10].views === 0) viewsPercentage = viewsCount * 100;
   else {
     const difference = {
       users: statsData[11].users - statsData[10].users,
