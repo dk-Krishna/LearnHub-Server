@@ -112,9 +112,8 @@ export const cancelSubscription = cathAsynError(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    refund: refund
-      ? "You will receive full refund within 7 days."
-      : "Refund Unsuccessful cause 7 day's refund policy exceeded",
-    message: "Subscription cancelled successfully.",
+    message: refund
+      ? "Subscription cancelled successfully!, You will receive full refund within 7 days."
+      : "Subscription cancelled successfully!, Refund Unsuccessful cause 7 day's refund policy exceeded",
   });
 });
